@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet"> 
+  <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <title>BKLA Associates</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+   
+  
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      color: #fff;
+      z-index: 1000;
+      font-family: 'Josefin Sans', sans-serif;
+      
+      
+    }
+  
+    
+  
+  
+  
+  
+  
+  
+    .navbar .logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar .logo:hover {
+    transform: translateX(5px);
+  }
+  
+  .navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 25px;
+  }
+  
+  .navbar .logo span {
+    padding-top: 25px;
+    font-size: 1.6rem;
+    font-weight: 100;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 5px;
+  }
+  
+    
+  
+    .hamburger {
+      
+      position: relative;
+      width: 60px;
+      height: 35px;
+      top: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1001;
+      transition: transform 0.3s ease;
+    }
+  
+    .hamburger:hover {
+      transform: translateX(-5px);
+    }
+  
+    .hamburger div {
+      width: 80%;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+  
+    .hamburger div.middle {
+      width: 60%;
+      margin-left: 20%;
+    }
+  
+    :root {
+      --bar-width: 350px;
+      
+    }
+  
+    .dropdown-menu {
+      position: fixed;
+      top: 0;
+      right: -500px;
+      width: 500px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      padding: 5rem;
+      transition: right 0.3s ease;
+      z-index: 9999;
+      overflow-y: auto;
+      padding-top: 200px;
+    }
+  
+    .dropdown-menu.active {
+      right: 0;
+    }
+  
+    .dropdown-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin: 0;
+      padding: 1.9rem 0;
+      position: relative;
+      transition: color 0.3s;
+      padding-left: 1rem;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 500;
+      letter-spacing: 4px;
+    }
+  
+    @media (max-width: 767.98px) {
+  .dropdown-menu {
+    padding-left: 105px;
+  }
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+    .dropdown-menu a::before, .dropdown-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: var(--bar-width);
+      height: 0.3px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  
+    .dropdown-menu a::before {
+      top: 0px;
+      
+    }
+  
+    .dropdown-menu a::after {
+      bottom: 0px;
+      
+    }
+  
+    .dropdown-menu .live-location {
+      margin-top: 2rem;
+      background-color: #DDDDDD;
+      
+      color: #fff;
+      padding: 1.3rem 3rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 500;
+      letter-spacing: 5px;
+      color: black;
+      font-size: 0.8rem;
+    }
+  
+    .dropdown-menu .live-location:hover {
+      background-color: #fff;
+    }
+  
+    .dropdown-menu .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      width: 35px;
+      height: 35px;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .dropdown-menu .close-btn div {
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      transform: rotate(45deg);
+      
+    }
+  
+    .dropdown-menu .close-btn div:last-child {
+      transform: rotate(-45deg);
+    }
+  
+    .hero {
+        
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('img/cutefirm_banner_repeat.jpg') no-repeat center center/cover;
+    
+      color: #fff;
+      text-align: center;
+      
+    }
+  
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 200;
+      letter-spacing: 20px;
+      position: relative !important;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+  
+    .typed-text {
+  position: absolute;
+  top: 100%; /* Position the animated words below the "We are the" text */
+  left: 50%;
+  transform: translateX(-50%); /* Center the animated text horizontally */
+  white-space: nowrap; /* Prevents the text from breaking into two lines */
+  font-size: 3.4rem; /* Adjust as needed for size */
+  letter-spacing: 20px;
+  word-wrap: break-word;
+  }
+  
+  @media (max-width: 768px) {
+    .typed-text {
+        font-size: 1.5rem;
+        word-wrap: break-word; /* Allows words to break */
+        overflow-wrap: break-word; /* Ensures proper line breaking */
+        white-space: normal; /* Enables text wrapping */
+    }
+  
+    .hero h1{
+    font-size: 1rem;
+    text-align: center;  
+    justify-content: center;  
+    max-width: 100%;
+    }
+  }
+  
+  
+  
+  .typed-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: typing 1s ease-in-out forwards;
+  }
+  
+  @keyframes typing {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+    @media (max-width: 768px) {
+  
+  
+      .navbar {
+        padding: 7px;  
+      }
+  
+      .navbar .logo span {
+        font-size: 0.8rem;
+        
+      }
+  
+      .dropdown-menu a {
+        font-size: 1rem;
+      }
+  
+      .hamburger {
+        width: 25px;
+        height: 25px;
+        margin-right: 15px;
+      }
+    }
+  </style>
+  </head>
+  <body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="img/logoW.png" alt="Company Logo">
+      <span>B Kabir & Law Associates</span>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div class="middle"></div>
+      <div></div>
+    </button>
+  </header>
+  
+  <div class="dropdown-menu" id="dropdown-menu">
+    <button class="close-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+    </button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="practice1.html">Services</a>
+    <a href="attorney.html">Attorney</a>
+    <a href="associates.html">Associates</a>
+    <a href="contact.html">Contact</a>
+    <button class="live-location" onclick="window.open('https://maps.app.goo.gl/5n88uqXQPzYyFhso7?g_st=ic')">Live Location</button>
+  </div>
+  
+  <section class="hero">
+    <h1>ASSOCIATES<br> <span class="typed-text"></span></h1>
+  </section>
+  
+
+  
+
+  </script>
+  
+  <script>
+    function toggleMenu() {
+      const dropdownMenu = document.getElementById('dropdown-menu');
+      dropdownMenu.classList.toggle('active');
+    }
+  </script>
+  
+  <script>
+    // Select your navbar
+  const navbar = document.querySelector('.navbar');
+  
+  // Add a scroll listener
+  window.addEventListener('scroll', () => {
+  const heroSection = document.querySelector('.hero'); // Hero section selector
+  const heroHeight = heroSection.offsetHeight; // Get the height of the hero section
+  
+  // Check if the user has scrolled past the hero section
+  if (window.scrollY > heroHeight) {
+    navbar.classList.add('hidden'); // Add the 'hidden' class to the navbar
+  } else {
+    navbar.classList.remove('hidden'); // Remove the 'hidden' class
+  }
+  });
+  
+  </script>
+
+      <!-- associates title ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+            <script>
+                // JavaScript for the scroll parallax effect
+                window.addEventListener('scroll', function() {
+                    const scrollPosition = window.scrollY;
+                    const topImage = document.querySelector('.top-image');
+                    const parallaxSpeed = 0.2; // Adjust this value to control parallax speed (higher = faster movement)
+            
+                    // Move the image vertically based on scroll position
+                    topImage.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
+                });
+            </script>
+            
+        
+
+
+
+
+
+            
+
+            <section class="content-container">
+                <div class="text-containerP">
+                  <h1>FCA </h1>
+                  <h2>Mozadded Ahmed Yusuf FCA</h2>
+                  <h5>We believe in “Our Words as Promises”, “Value Our Associates”, “Reward Their Performance”,” Customer Satisfaction Matrix As True Test”. We work together, across boundaries to meet the needs of our clients and to help the company win.</h5>
+              
+                  <h3>We want to contribute to the dreams of Bangladesh and offer every household of Bangladesh an opportunity to develop professional capabilities and engaged in businesses and development activities for economic and social benefits, also committed to making a positive impact with the same energy that characterizes our practice of Fiscal and Corporate Services as a community involvement in development of Income Tax & Company Law is a testament to the company’s core values.</h3>
+                  
+                  <h4>Founder of B. Kabir & Law Associates and, he has over 20 years of experience advising multinational clients, financial institutions and governments on mergers and acquisitions.</h4>
+              
+                  <!-- Social Media Buttons -->
+                  <div class="unique-social-buttons">
+                    <a href="#" class="unique-social-btn unique-facebook-btn">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="unique-social-btn unique-gmail-btn">
+                      <i class="fas fa-envelope"></i>
+                    </a>
+                  </div>
+                </div>
+              
+                <div class="image-containerP">
+                  <img src="img/career3.jpg" alt="Image description">
+                </div>
+              </section>
+
+
+              <section class="content-container">
+                <div class="text-containerP">
+                  <h1>FCA </h1>
+                  <h2>Ashikur Rahman</h2>
+                  <h5>We believe in “Our Words as Promises”, “Value Our Associates”, “Reward Their Performance”,” Customer Satisfaction Matrix As True Test”. We work together, across boundaries to meet the needs of our clients and to help the company win.</h5>
+              
+                  <h3>We want to contribute to the dreams of Bangladesh and offer every household of Bangladesh an opportunity to develop professional capabilities and engaged in businesses and development activities for economic and social benefits, also committed to making a positive impact with the same energy that characterizes our practice of Fiscal and Corporate Services as a community involvement in development of Income Tax & Company Law is a testament to the company’s core values.</h3>
+                  
+                  <h4>Founder of B. Kabir & Law Associates and, he has over 20 years of experience advising multinational clients, financial institutions and governments on mergers and acquisitions.</h4>
+              
+                  <!-- Social Media Buttons -->
+                  <div class="unique-social-buttons">
+                    <a href="#" class="unique-social-btn unique-facebook-btn">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="unique-social-btn unique-gmail-btn">
+                      <i class="fas fa-envelope"></i>
+                    </a>
+                  </div>
+                </div>
+              
+                <div class="image-containerP">
+                  <img src="img/career3.jpg" alt="Image description">
+                </div>
+              </section>
+
+
+              <section class="content-container">
+                <div class="text-containerP">
+                  <h1>Barrister </h1>
+                  <h2>Barrister</h2>
+                  <h5>We believe in “Our Words as Promises”, “Value Our Associates”, “Reward Their Performance”,” Customer Satisfaction Matrix As True Test”. We work together, across boundaries to meet the needs of our clients and to help the company win.</h5>
+              
+                  <h3>We want to contribute to the dreams of Bangladesh and offer every household of Bangladesh an opportunity to develop professional capabilities and engaged in businesses and development activities for economic and social benefits, also committed to making a positive impact with the same energy that characterizes our practice of Fiscal and Corporate Services as a community involvement in development of Income Tax & Company Law is a testament to the company’s core values.</h3>
+                  
+                  <h4>Founder of B. Kabir & Law Associates and, he has over 20 years of experience advising multinational clients, financial institutions and governments on mergers and acquisitions.</h4>
+              
+                  <!-- Social Media Buttons -->
+                  <div class="unique-social-buttons">
+                    <a href="#" class="unique-social-btn unique-facebook-btn">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="unique-social-btn unique-gmail-btn">
+                      <i class="fas fa-envelope"></i>
+                    </a>
+                  </div>
+                </div>
+              
+                <div class="image-containerP">
+                  <img src="img/career3.jpg" alt="Image description">
+                </div>
+              </section>
+
+
+              <section class="content-container">
+                <div class="text-containerP">
+                  <h1> </h1>
+                  <h2>Kabir</h2>
+                  <h5>We believe in “Our Words as Promises”, “Value Our Associates”, “Reward Their Performance”,” Customer Satisfaction Matrix As True Test”. We work together, across boundaries to meet the needs of our clients and to help the company win.</h5>
+              
+                  <h3>We want to contribute to the dreams of Bangladesh and offer every household of Bangladesh an opportunity to develop professional capabilities and engaged in businesses and development activities for economic and social benefits, also committed to making a positive impact with the same energy that characterizes our practice of Fiscal and Corporate Services as a community involvement in development of Income Tax & Company Law is a testament to the company’s core values.</h3>
+                  
+                  <h4>Founder of B. Kabir & Law Associates and, he has over 20 years of experience advising multinational clients, financial institutions and governments on mergers and acquisitions.</h4>
+              
+                  <!-- Social Media Buttons -->
+                  <div class="unique-social-buttons">
+                    <a href="#" class="unique-social-btn unique-facebook-btn">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="unique-social-btn unique-gmail-btn">
+                      <i class="fas fa-envelope"></i>
+                    </a>
+                  </div>
+                </div>
+              
+                <div class="image-containerP">
+                  <img src="img/career3.jpg" alt="Image description">
+                </div>
+              </section>
+
+
+
+
+
+
+
+
+
+              <style>
+                /*this is for head of chamber*/
+            
+                .content-container {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 20px;
+                    background-color: #f5f5f5; /* Light gray background */
+                  }
+                  
+                  .text-containerP {
+                    width: 50%;
+                    padding: 10px;
+                  }
+                  
+                  .image-containerP {
+                    width: 50%;
+                    text-align: center;
+                  }
+                  
+                  img {
+                    max-width: 100%;
+                  }
+                
+                  .text-containerP h1{
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 14px;
+                    font-style: normal;
+                    margin-top: 100px;
+                    margin-left: 110px;
+                
+                  }
+                
+                  .text-containerP h2{
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 600;
+                    font-style: normal;
+                    margin-left: 110px;
+                    margin-bottom: 35px;
+                  }
+                
+                  .text-containerP h3{
+                    font-family: 'Poppins', sans-serif;
+                    margin-left: 110px;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 200;
+                    line-height: 30px;
+                  }
+                
+                  .text-containerP h4{
+                    font-family: 'Poppins', sans-serif;
+                    margin-left: 110px;
+                    font-style: normal;
+                    font-size: 16px;
+                    font-weight: 200;
+                    line-height: 30px;
+                    
+                  }
+                
+                  .text-containerP h5{
+                    font-family: 'Poppins', sans-serif;
+                    margin-left: 110px;
+                    font-size: 17px;
+                    font-weight: 500;
+                    line-height: 33px;
+                    font-style: normal;
+                  }
+                
+                  
+                /* Unique Social Buttons Container */
+                .unique-social-buttons {
+                    display: flex;
+                    justify-content: start;
+                    margin-left: 110px;
+                    margin-top: 20px;
+                  }
+                  
+                  /* Unique Social Button Styles - Black background, white icons */
+                  .unique-social-btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: black; /* Default button color - black */
+                    color: white; /* Icon color - white */
+                    text-align: center;
+                    margin-right: 10px;
+                    font-size: 20px;
+                    transition: all 0.3s ease;
+                  }
+                  
+                  .unique-facebook-btn {
+                    background-color: black; /* Black button */
+                    margin-top: 30px;
+                  }
+                  
+                  .unique-gmail-btn {
+                    background-color: black; /* Black button */
+                    margin-bottom: 100px;
+                    margin-top: 30px;
+                
+                  }
+                  
+                  /* Hover Effect - Switch colors on hover */
+                  .unique-social-btn:hover {
+                    background-color: white; /* Button becomes white */
+                    color: black; /* Icon becomes black */
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                  }
+            
+            
+            
+            
+                  /* Mobile-first styles */
+            
+                  @media (max-width: 768px) {
+              /* Remove margin and padding from body and html */
+              html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden; /* Prevent horizontal scroll */
+              }
+            
+              /* Content container adjustments */
+              .content-container {
+                display: block;
+                background-color: #f5f5f5; /* Light grey background */
+                padding: 20px 0; /* Only vertical padding */
+                width: 100%;
+                box-sizing: border-box; /* Prevent overflow */
+                margin: 0; /* Make sure no extra margin */
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+              }
+            
+              /* Text container adjustments */
+              .text-containerP {
+                width: 100%;
+                padding: 0; /* Remove padding */
+                box-sizing: border-box; /* Prevent padding overflow */
+              }
+            
+              /* Image container adjustments */
+              .image-containerP {
+                width: 100%;
+                text-align: center;
+                padding: 0 10px; /* Padding on both sides for image */
+                box-sizing: border-box; /* Prevent padding overflow */
+                margin-top: 20px; /* Ensure space between title and image */
+              }
+            
+              .image-containerP img {
+                width: 100%;
+                height: auto;
+                padding: 0 10px; /* Padding on both sides for image */
+                padding-left: 200px;
+                box-sizing: border-box; /* Prevent padding overflow */
+              }
+            
+              /* Title h2 - centered and without side padding */
+              .text-containerP h2 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                font-size: 18px;
+                text-align: center;
+                margin-top: 20px;
+                padding: 0; /* No padding on sides */
+                box-sizing: border-box;
+                margin-left: -1px;
+              }
+            
+              /* Other text elements */
+              .text-containerP h5,
+              .text-containerP h4,
+              .text-containerP h3 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                text-align: left; /* Align text to left for better readability */
+                margin-top: 10px;
+                padding: 0; /* Remove padding */
+                box-sizing: border-box; /* Prevent padding overflow */
+                margin-left: -1px;
+                padding-left: 40px;
+                padding-right: 40px;
+              }
+            
+              /* Social buttons */
+              .unique-social-buttons {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                margin-left: -1px;
+                padding-left: 40px;
+                padding-right: 40px;
+              }
+            
+              .unique-social-btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: black;
+                color: white;
+                text-align: center;
+                margin-right: 10px;
+                font-size: 20px;
+                transition: all 0.3s ease;
+              }
+            
+              .unique-social-btn:hover {
+                background-color: white;
+                color: black;
+                transform: scale(1.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+              }
+            }
+            
+            
+            
+            
+            
+            
+                  </style>
+
+
+
+              
+            
+
+
+
+
+
+
+
+  
+
+
+
+
+            <!-- Footer Start -->
+<div class="footer-container">
+  <div class="footer-content text-center">
+      <h3 class="footer-title">B. KABIR & LAW ASSOCIATES</h3>
+      <p class="footer-address"><i class="fa fa-map-marker-alt"></i> 30 Topkhana Road, Amina Vista, Flat B2</p>
+      <p class="footer-phone"><i class="fa fa-phone-alt"></i> +880 1715016 746</p>
+      <div class="footer-social-media">
+          <a href="https://facebook.com" class="social-icon" data-icon="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" class="social-icon" data-icon="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.google.com/maps" class="social-icon" data-icon="maps"><i class="fas fa-map-marker-alt"></i></a>
+
+      </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+<!-- Add FontAwesome CDN for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<style>
+.footer-container {
+  position: relative;
+  margin-top: 0; /* Removed margin-top to eliminate gap */
+  padding: 40px 0; /* Adjust padding if needed */
+  background: #121518; /* Black background */
+  color: #ffffff;
+  text-align: center; /* Center-align all elements */
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Arrange children vertically */
+  justify-content: center; /* Center content vertically */
+  height: 400px; /* Set a fixed height to maintain the black area */
+}
+
+.footer-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 32px;
+  color: #aa9166;
+  margin-bottom: 10px; /* Adjust bottom margin */
+}
+
+.footer-address,
+.footer-phone {
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  margin-bottom: 3px; /* Adjust bottom margin */
+}
+
+.footer-phone {
+  margin-bottom: 30px !important; /* Adjust bottom margin */
+}
+
+.footer-social-media {
+  margin-top: 40px; /* Space above social icons */
+}
+
+.footer-social-media .social-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px; /* Center the icon within the circle */
+  margin: 0 10px; /* Space between icons */
+  background: #ffffff; /* White background */
+  border-radius: 50%; /* Make it a circle */
+  font-size: 24px; /* Icon size */
+  color: #121518; /* Default icon color */
+  transition: background 0.4s ease, color 0.4s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for social icons */
+.footer-social-media .social-icon:hover {
+  background: #aa9166; /* Gold color on hover */
+  color: #ffffff; /* Change icon color to white */
+}
+</style>
+    </body>
+</html>

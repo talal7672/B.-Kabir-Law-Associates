@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet"> 
+  <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+
+  <title>B Kabir & Law Associates</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ 
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fff;
+    z-index: 1000;
+    font-family: 'Josefin Sans', sans-serif;
+    
+    
+  }
+
+  
+
+
+
+
+
+
+  .navbar .logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo:hover {
+  transform: translateX(5px);
+}
+
+.navbar .logo img {
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 25px;
+}
+
+.navbar .logo span {
+  padding-top: 25px;
+  font-size: 1.6rem;
+  font-weight: 100;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 5px;
+}
+
+  
+
+  .hamburger {
+    
+    position: relative;
+    width: 60px;
+    height: 35px;
+    top: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger:hover {
+    transform: translateX(-5px);
+  }
+
+  .hamburger div {
+    width: 80%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger div.middle {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  :root {
+    --bar-width: 350px;
+    
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 5rem;
+    transition: right 0.3s ease;
+    z-index: 9999;
+    overflow-y: auto;
+    padding-top: 200px;
+  }
+
+  .dropdown-menu.active {
+    right: 0;
+  }
+
+  .dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 1.9rem 0;
+    position: relative;
+    transition: color 0.3s;
+    padding-left: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 4px;
+  }
+
+  @media (max-width: 767.98px) {
+.dropdown-menu {
+  padding-left: 105px;
+}
+
+}
+
+
+
+
+
+
+
+
+  .dropdown-menu a::before, .dropdown-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: var(--bar-width);
+    height: 0.3px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dropdown-menu a::before {
+    top: 0px;
+    
+  }
+
+  .dropdown-menu a::after {
+    bottom: 0px;
+    
+  }
+
+  .dropdown-menu .live-location {
+    margin-top: 2rem;
+    background-color: #DDDDDD;
+    
+    color: #fff;
+    padding: 1.3rem 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: black;
+    font-size: 0.8rem;
+  }
+
+  .dropdown-menu .live-location:hover {
+    background-color: #fff;
+  }
+
+  .dropdown-menu .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 35px;
+    height: 35px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .dropdown-menu .close-btn div {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    
+  }
+
+  .dropdown-menu .close-btn div:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .hero h1 {
+font-size: 4.5rem;
+font-weight: 200;
+letter-spacing: 20px;
+position: relative !important;
+font-family: 'Josefin Sans', sans-serif;
+margin-top: -400px;
+}
+
+
+
+  .typed-text {
+position: absolute;
+top: 100%; /* Position the animated words below the "We are the" text */
+left: 50%;
+transform: translateX(-50%); /* Center the animated text horizontally */
+white-space: nowrap; /* Prevents the text from breaking into two lines */
+font-size: 4.5rem; /* Adjust as needed for size */
+letter-spacing: 20px;
+word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .typed-text {
+      font-size: 1.5rem;
+      word-wrap: break-word; /* Allows words to break */
+      overflow-wrap: break-word; /* Ensures proper line breaking */
+      white-space: normal; /* Enables text wrapping */
+  }
+
+  .hero h1{
+  font-size: 1rem;
+  text-align: center;  
+  justify-content: center;  
+  max-width: 100%;
+  }
+}
+
+
+
+.typed-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: typing 1s ease-in-out forwards;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  @media (max-width: 768px) {
+
+
+    .navbar {
+      padding: 7px;  
+    }
+
+    .navbar .logo span {
+      font-size: 0.8rem;
+      
+    }
+
+    .dropdown-menu a {
+      font-size: 1rem;
+    }
+
+    .hamburger {
+      width: 25px;
+      height: 25px;
+      margin-right: 15px;
+    }
+  }
+  </style> 
+  
+  
+  <style>
+    .extra-text {
+      position: fixed;
+      margin-top: 0; /* Removed margin-top to eliminate gap */
+      padding: 40px 0; /* Adjust padding if needed */
+      margin-top: 100px;
+      background: #121518; /* Black background */
+      color: #ffffff;
+      text-align: center; /* Center-align all elements */
+      display: flex; /* Use Flexbox */
+      flex-direction: column; /* Arrange children vertically */
+      justify-content: center; /* Center content vertically */
+      height: 400px; /* Set a fixed height to maintain the black area */
+    }
+    
+    .extra-text h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 32px;
+      color: #aa9166;
+      margin-bottom: 10px; /* Adjust bottom margin */
+      
+    }
+
+    @media (min-width: 768px) {
+      .extra-text h3 {
+        margin-top: 60px;
+      }
+    }
+
+      
+
+
+    
+    /* Media Query */
+    @media (max-width: 768px) {
+      .extra-text h3 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .extra-text {
+        padding: 0;
+      }
+    }
+    
+    .extra-text p9 {
+      font-size: 15px;
+      font-family: 'Josefin Sans', sans-serif;
+      color: #ffffff;
+      margin-bottom: 3px; /* Adjust bottom margin */
+    }
+    
+    .extra-text p9:last-child {
+      margin-bottom: 30px !important; /* Adjust bottom margin for the last paragraph */
+    }
+    
+    .footer-social-media {
+      margin-top: 40px; /* Space above social icons */
+    }
+    
+    .footer-social-media .social-icon {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px; /* Center the icon within the circle */
+      margin: 0 3px; /* Space between icons */
+      background: #ffffff; /* White background */
+      border-radius: 50%; /* Make it a circle */
+      font-size: 24px; /* Icon size */
+      color: #121518; /* Default icon color */
+      transition: background 0.4s ease, color 0.4s ease; /* Smooth transition for hover effect */
+    }
+    
+    /* Hover effect for social icons */
+    .footer-social-media .social-icon:hover {
+      background: #aa9166; /* Gold color on hover */
+      color: #ffffff; /* Change icon color to white */
+    }
+    </style>
+
+
+
+<style>
+  /* General Reset */
+
+
+/* Wrapper */
+.wrapper {
+position: relative;
+width: 100%;
+height: 100%; /* Full height */
+}
+
+/* Hero Section */
+.hero {
+position: fixed; /* Stays fixed at the top of the viewport */
+top: 0;
+left: 0;
+width: 100%;
+height: 150vh; /* Full 150vh height */
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), 
+         url('img/otherbanner_edited.jpg') no-repeat center center/cover;
+color: #fff;
+text-align: center;
+z-index: 1;
+
+}
+
+
+/* Extra Text Section */
+.extra-text {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 50vh;
+background-color: rgba(0, 0, 0, 0.7);
+color: white;
+display: none; /* Hide it initially */
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+padding-top: 50px;
+}
+
+/* Contact Section */
+.contact-section {
+position: relative;
+margin-top: 100vh; /* Starts right after the 100vh of the hero section */
+width: 100%;
+min-height: 80vh; /* Full height of the viewport */
+background-color: #ffffff;
+color: #000000;
+display: flex;
+flex-direction: column;
+
+
+z-index: 2;
+
+padding-bottom: 20px;
+}
+
+
+/* Transparent space to force scrolling */
+.extra-space {
+height: 40vh; /* Extra scroll space */
+background-color: transparent; /* Transparent background */
+}
+</style>
+
+
+  </head>
+
+
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+          <img src="img/logoW.png" alt="Company Logo">
+          <span>B Kabir & Law Associates</span>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div class="middle"></div>
+          <div></div>
+        </button>
+      </header>
+      
+      <div class="dropdown-menu" id="dropdown-menu">
+        <button class="close-btn" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+        </button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="practice1.html">Services</a>
+        <a href="attorney.html">Attorney</a>
+        <a href="associates.html">Associates</a>
+        <a href="contact.html">Contact</a>
+        <button class="live-location" onclick="window.open('https://maps.app.goo.gl/5n88uqXQPzYyFhso7?g_st=ic')">Live Location</button>
+      </div> 
+      
+   
+  
+
+      <div class="wrapper">
+        <section class="hero">
+          <h1>ABOUT US<br> <span class="typed-text"></span></h1>
+          
+            <i class="fas fa-chevron-down"></i>
+          
+          <div class="extra-text" id="extra-content">
+            <h3>B. KABIR & LAW ASSOCIATES</h3>
+            
+            <p>
+              <i class="fa fa-map-marker-alt"></i>&nbsp;30 Topkhana Road, Amina Vista, Flat C-2N
+            </p>
+            <p>
+              <i class="fa fa-phone-alt"></i>&nbsp; +880 1715016 746
+            </p>
+            <div class="footer-social-media">
+              <a href="https://facebook.com" class="social-icon" data-icon="facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com" class="social-icon" data-icon="twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.google.com/maps" class="social-icon" data-icon="maps">
+                <i class="fas fa-map-marker-alt"></i>
+              </a>
+            </div>
+          </div>
+          
+        </section>
+      </div>
+      
+     
+<style>
+/* Style the down-arrow icon */
+.fas.fa-chevron-down {
+  position: absolute;
+  top: 62%;         /* Center vertically */
+  left: 50%;        /* Center horizontally */
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;    /* Ensure it's on top of other elements */
+  
+  /* Start centered */
+  transform: translate(-50%, -50%);
+  
+  /* Bounce Animation */
+  animation: bounce 2s infinite;
+}
+
+@media (max-width: 767.98px) {
+  .fas.fa-chevron-down {
+    top: 56%;
+  }
+} 
+
+
+
+/* Bounce Animation Keyframes */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    /* Stay centered */
+    transform: translate(-50%, -50%);
+  }
+  40% {
+    /* Bounce upward by 20px while preserving centering */
+    transform: translate(-50%, calc(-50% - 20px));
+  }
+  60% {
+    /* Bounce downward by 10px while preserving centering */
+    transform: translate(-50%, calc(-50% - 10px));
+  }
+}
+
+</style>
+      
+
+
+      
+<div class="contact-section">
+
+  <div class client76></div>
+  <div class="text-lines2">
+  <p3>A Breif Overview</p3>
+  <p2>About Our Firm</p2>
+  
+  </div>
+  
+  
+  <style>
+  .text-lines2 p3{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 19px;
+  margin-top: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  color: #707070;
+  letter-spacing: 3px;
+  font-style: normal;
+  padding-top: 100px;
+  
+  
+  
+  }
+  
+  .text-lines2 p2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #000;
+  font-weight: 300;
+  margin-top: -2px;
+  margin-bottom: 130px;
+  position: relative; /* Make the parent relative for positioning the line */
+  letter-spacing: 10px;
+  }
+  
+  .text-lines2 p2::after {
+  content: '';
+  position: absolute; /* Position the line relative to the text */
+  left: 50%; /* Center the line beneath the text */
+  top: 90px; /* Place the line directly beneath the text */
+  width: 30px; /* Adjust the thickness of the line */
+  height: 1.5px; /* Adjust the height of the line */
+  background-color: #000; /* Color of the line */
+  transform: translateX(-50%); /* Center the line horizontally */
+  
+  @media (max-width: 767.98px) {
+  
+  .text-lines2 p2 {
+  font-size: 12px;
+  }
+  }
+  
+  
+  }
+  </style>
+
+
+
+
+
+  
+
+
+
+
+<div class="about">
+<div class="container">
+<div class="About-Uss">
+
+<div class="underline"></div> 
+</div>
+<div class="about-text">
+<p class="slide-left">
+We are providing and dealing with all sorts of financial and corporate 
+and professional services and matters to operate and run in connection 
+with the Companies Act, Trade Organization Act, Societies Registration Act, 
+Trust Act, Income Tax Ordinance, Sales Tax, Gift Tax, Customs Act, Value Added Tax Act, 
+Estate Duty Act, Patent-Design and Trademark Registration Act, Copyright Act, Bangladesh 
+Accounting Standard (BSA), International Accounting Standard (IAS) and any other Acts which 
+are prevailing and operative in Bangladesh.<br><br>
+We provide Income Tax Consultancy, Accounting Services, Company Law & Corporate Affairs, 
+Value Added Tax (VAT), Bangladesh Investment Development Authority Affairs (BIDA), ERC, 
+IRC, Project Profile and local & international Accountings Outsourcing and any other services 
+as the company as well as individual may think fit and proper. We are committed to provide the 
+best services to our clients.<br><br>
+B.KABIR & LAW ASSOCIATES has commercially and technically experienced human capital for catering 
+to diverse professional services required by clients. The man-power consists of largely multi-skilled 
+individuals who are supported by sector specific specialists. The firm organizes assignment execution 
+in a manner which reduces the risks of interruption in services due to attrition by constituting an appropriate 
+team with backups and strong documentation.<br><br>
+We specialize in the study of costing, accounting practice, local laws and regulatory boards, 
+market trends and many of our clients come from top manufacturing units, multinational company, 
+media, entertainment,professional services, property and retail industries. As a professional accountant, 
+we agree to follow a Code of Ethics that promotes integrity, safety, and quality which also complies with 
+different business institutions and regulatory bodies.<br><br>
+We're wholly committed to providing businesses, and individual clients, with the full range of pro-active support and advice.
+</p>
+</div>
+</div>
+</div>
+
+
+<style>
+.about {
+position: relative;
+width: 100%;
+padding: 45px 0;
+text-align: left;
+margin-top: 73px; /* Align text to the left */
+}
+
+.container {
+max-width: 1200px; /* Ensures the content doesn't stretch too wide */
+margin: 0 auto; /* Centers the container */
+padding: 0 20px; /* Added padding on both sides of the container for more cohesion */
+}
+
+.About-Uss {
+display: inline-block; /* Makes the entire section inline-block */
+}
+
+.About-Uss h1 {
+font-family: 'Poppins', sans-serif;
+font-size: 14px; /* Size of the header */
+letter-spacing: 4px;
+font-style: normal;
+
+margin-bottom: 5px; /* Space between header and underline */
+}
+
+
+
+.about-text {
+font-size: 15px;
+font-family: 'Poppins' sans-serif; /* Font size for the text */
+line-height: 1.6; /* Line height for readability */
+margin-top: 25px;
+}
+
+.about-text p {
+margin-bottom: 15px; /* Space between paragraphs */
+font-size: 19px;
+line-height: 36px;
+font-weight: 400;
+font-family: 'Josefin Sans', sans-serif;
+margin-top: -90px;
+color: #000;
+
+}
+
+
+@media (min-width: 767.98px) {
+
+.about-text p{
+margin-top: -100px;
+}
+}
+
+
+
+
+
+@media (max-width: 767.98px) {
+/* Center the About section and adjust padding for mobile */
+.about {
+padding: 30px 15px; /* Responsive padding for mobile */
+text-align: center; /* Center-align the text in the about section */
+}
+
+
+
+.About-Uss {
+display: block; /* Use block display for full width and centering */
+text-align: center; /* Center the content inside the About-Uss */
+}
+
+.About-Uss h1 {
+font-size: 1.2rem; /* Increase font size for mobile */
+font-family: 'Poppins', sans-serif;
+letter-spacing: 2px;
+margin-bottom: 10px; /* Adjust space below heading */
+}
+
+
+
+
+.about-text p {
+text-align: left;
+}
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HTML Section -->
+<section class="success-section">
+<div class="content-wrapper">
+<div class="left-content">
+  <h2>Defining <span>Success</span> Together</h2>
+  <p>
+      The synergy between our real estate and banking and finance teams provides our clients
+      with particular expertise on real estate project finance in each of the countries in our
+      region. We act for real estate developers.
+  </p>
+  <p>
+      Our top-tier real estate practice has concrete knowledge of the practicalities of the
+      regional markets, and the expertise and capacity to handle large-scale complex
+      transactions. With a wealth of experience including Public-Private Partnerships.
+  </p>
+</div>
+
+<div class="right-content">
+  <div class="graph-container">
+      <div class="bar" data-width="100%" data-label="Company Clients (150+)"></div>
+      <div class="bar" data-width="75%" data-label="Individual Clients (150+)"></div>
+  </div>
+</div>
+</div>
+
+<!-- Centered Stats Section -->
+<div class="stats">
+<div class="stat">
+  <p>Company Founded</p>
+  <span id="year" class="counter">0</span>
+</div>
+<div class="stat">
+  <p>Company Clients</p>
+  <span id="companyClients" class="counter">0</span>
+</div>
+<div class="stat">
+  <p>Individual Clients</p>
+  <span id="individualClients" class="counter">0</span>
+</div>
+</div>
+</section>
+
+<!-- CSS Styling -->
+<style>
+
+
+.success-section {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+padding: 50px;
+background-color: #1d1c1c;
+color: #fff;
+height: auto;
+box-sizing: border-box;
+}
+
+.content-wrapper {
+display: flex;
+justify-content: space-between;
+width: 100%;
+margin-bottom: 50px;
+}
+
+/* Left Content */
+.left-content {
+width: 45%;
+padding-right: 5%; /* Space between text and graphs */
+box-sizing: border-box;
+}
+
+.left-content h2 {
+font-size: 35px;
+margin-bottom: 20px;
+font-family: 'Josefin Sans', sans-serif;
+font-style: normal;
+text-transform: none;
+margin-right: 20px;
+max-width: 400px;
+margin-left: 88px;
+margin-top: 50px;
+color: #ffffff;
+font-weight: 300;
+}
+
+.left-content h2 span {
+font-style: italic;
+color: #d2b48c;
+}
+
+.left-content p {
+font-size: 17px;
+line-height: 1.5;
+margin-bottom: 10px;
+margin-left: 88px;
+max-width: 300px;
+max-width: 800px;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 300;
+}
+
+/* Right Content (Graphs) */
+.right-content {
+width: 35%;
+box-sizing: border-box;
+}
+
+.graph-container {
+margin-top: 20px;
+margin-left: -220px; /* Change this value as needed to adjust the container's position */
+margin-right: 200px;
+margin-top: 50px;
+}
+
+.bar {
+height: 20px;
+background-color: #d2b48c;
+position: relative;
+margin-bottom: 15px;
+width: 0;
+transition: width 2s ease-in-out;
+}
+
+.bar::after {
+content: attr(data-label);
+position: absolute;
+right: -170px;
+top: -5px;
+font-size: 0.8rem;
+font-family: 'Josefin Sans', sans-serif;
+color: #fff;
+}
+
+/* Centered Stats */
+.stats {
+display: flex;
+justify-content: center;
+margin-top: 50px;
+text-align: center;
+}
+
+.stat {
+margin: 0 20px;
+}
+
+.stat p {
+font-size: 1.1rem;
+margin-bottom: 5px;
+font-family: 'Josefin Sans', sans-serif;
+}
+
+.counter {
+font-size: 2rem;
+color: #d2b48c;
+margin-left: 20px;
+font-family: 'Josefin Sans', sans-serif;
+
+}
+
+/* For larger screens, reduce padding or width limits */
+@media (min-width: 768px) {
+#work-with-us {
+padding-left: 0;
+padding-right: 0;
+width: 100%;
+}
+}
+
+/* Global Box-sizing */
+* {
+box-sizing: border-box;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+.success-section {
+padding: 20px 10px; /* Reduced padding for left and right */
+}
+
+/* Left content: full width, minimal padding */
+.left-content {
+width: 100%;
+padding: 0 10px; /* Minimal padding on both sides */
+margin-left: 0;
+margin-right: 0;
+}
+
+/* Right content: hide graphs on mobile */
+.right-content {
+display: none;
+}
+
+/* Stats section adjustment: stack vertically */
+.stats {
+flex-direction: column;
+align-items: center;
+padding-bottom: 40px;
+}
+
+.stat {
+margin: 10px 0; /* Adjust margin for better spacing */
+}
+
+/* Graph bars: hide on mobile */
+.graph-container {
+display: none;
+}
+
+/* Adjust title for mobile */
+.left-content h2 {
+text-align: center;
+padding-top: 40px;
+font-size: 40px;
+}
+
+.left-content p {
+font-size: 17px;
+line-height: 1.5;
+max-width: 100%; /* Ensure full width without overflow */
+margin: 0 auto; /* Center-align text on small screens */
+}
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+/* Centering the h2 title */
+.left-content h2 {
+text-align: center; /* Center the text */
+margin: 0; /* Remove any margins */
+font-size: 25px; /* Adjust font size for mobile to fit in one line */
+line-height: 1.2; /* Adjust line-height for better spacing */
+white-space: nowrap; /* Ensure the text stays on one line */
+padding-bottom: 40px
+}
+
+.left-content h2 span {
+font-style: italic;
+color: #d2b48c;
+}
+}
+
+
+
+
+</style>
+
+<!-- JavaScript for Counters and Graph Animation -->
+<script>
+// Counters animation
+function animateCounter(id, start, end, duration) {
+let element = document.getElementById(id);
+let range = end - start;
+let increment = end > start ? 1 : -1;
+let stepTime = Math.abs(Math.floor(duration / range));
+let current = start;
+let timer = setInterval(() => {
+  current += increment;
+  element.textContent = current;
+  if (current === end) {
+      clearInterval(timer);
+  }
+}, stepTime);
+}
+
+// Animate counters and graph on page load
+window.onload = function () {
+// Counters
+animateCounter('year', 0, 2006, 2000);
+animateCounter('companyClients', 0, 150, 2000);
+animateCounter('individualClients', 0, 150, 2000);
+
+// Graph bars
+const bars = document.querySelectorAll('.bar');
+bars.forEach(bar => {
+  setTimeout(() => {
+      bar.style.width = bar.getAttribute('data-width');
+  }, 300); // Adding a slight delay before animation
+});
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--ABOUT CSS START-->
+
+<div class client76></div>
+<div class="text-lines2">
+<p3>How We Serve</p3>
+<p2>To Our Country</p2>
+</div>
+
+
+<style>
+
+
+
+
+
+
+
+</style>
+
+<div class="about">
+<div class="container">
+<div class="About-Uss">
+
+<div class="underline"></div> 
+</div>
+<div class="about-text">
+<p class="slide-left">
+
+  To contribute to the dream of “Digital Bangladesh” and offer every household of Bangladesh 
+  an opportunity to be part of the development of Income Tax & Company Law, develop professional 
+  capabilities and engaged in businesses and development activities for economic and social benefits.
+</p>
+</div>
+</div>
+</div>
+
+
+<style>
+.about {
+position: relative;
+width: 100%;
+padding: 45px 0;
+text-align: left;
+margin-top: 73px; /* Align text to the left */
+}
+
+.container {
+max-width: 1200px; /* Ensures the content doesn't stretch too wide */
+margin: 0 auto; /* Centers the container */
+padding: 0 20px; /* Added padding on both sides of the container for more cohesion */
+}
+
+.About-Uss {
+display: inline-block; /* Makes the entire section inline-block */
+}
+
+.About-Uss h1 {
+font-family: 'Poppins', sans-serif;
+font-size: 14px; /* Size of the header */
+letter-spacing: 4px;
+font-style: normal;
+
+margin-bottom: 5px; /* Space between header and underline */
+}
+
+
+
+.about-text {
+font-size: 15px;
+font-family: 'Poppins' sans-serif; /* Font size for the text */
+line-height: 1.6; /* Line height for readability */
+margin-top: 25px;
+}
+
+.about-text p {
+margin-bottom: 15px; /* Space between paragraphs */
+font-size: 19px;
+line-height: 36px;
+font-weight: 400;
+font-family: 'Josefin Sans', sans-serif;
+margin-top: -90px;
+color: #000;
+
+}
+
+
+@media (min-width: 767.98px) {
+
+.about-text p{
+margin-top: -100px;
+}
+}
+
+
+
+
+
+@media (max-width: 767.98px) {
+/* Center the About section and adjust padding for mobile */
+.about {
+padding: 30px 15px; /* Responsive padding for mobile */
+text-align: center; /* Center-align the text in the about section */
+}
+
+
+
+.About-Uss {
+display: block; /* Use block display for full width and centering */
+text-align: center; /* Center the content inside the About-Uss */
+}
+
+.About-Uss h1 {
+font-size: 1.2rem; /* Increase font size for mobile */
+font-family: 'Poppins', sans-serif;
+letter-spacing: 2px;
+margin-bottom: 10px; /* Adjust space below heading */
+}
+
+
+
+
+.about-text p {
+text-align: left;
+}
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--ABOUT CSS START-->
+
+<div class client76></div>
+<div class="text-lines2">
+<p7>How We Make a Difference</p7>
+<p2>To Our Community</p2>
+</div>
+
+
+<style>
+.text-lines2 p7{
+
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-size: 14px;
+margin-top: 50px;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 550;
+color: #707070;
+letter-spacing: 3px;
+font-style: normal;
+padding-top: 10px;
+
+
+
+}
+
+
+
+
+
+
+</style>
+
+<div class="about">
+<div class="container">
+<div class="About-Uss">
+
+<div class="underline"></div> 
+</div>
+<div class="about-text">
+<p class="slide-left">
+
+  The B.KABIR & LAW ASSOCIATEShas a proud tradition of making an actual, 
+  direct impact on the communities we serve. We believe when our community thrives, 
+  so does our business. We are committed to making a positive impact with the same energy 
+  that characterizes our practice of fiscal and corporate services. Our commitment to community 
+  involvement is a testament to the company’s core values. To Our Associates We believe in “a will to win”. 
+  We value our associates, encourage their development and reward their performances. We work together, across
+   boundaries to meet the needs of our clients and to help the company win.
+</p>
+</div>
+</div>
+</div>
+
+
+<style>
+.about {
+position: relative;
+width: 100%;
+padding: 45px 0;
+text-align: left;
+margin-top: 73px; /* Align text to the left */
+}
+
+.container {
+max-width: 1200px; /* Ensures the content doesn't stretch too wide */
+margin: 0 auto; /* Centers the container */
+padding: 0 20px; /* Added padding on both sides of the container for more cohesion */
+}
+
+.About-Uss {
+display: inline-block; /* Makes the entire section inline-block */
+}
+
+.About-Uss h1 {
+font-family: 'Poppins', sans-serif;
+font-size: 14px; /* Size of the header */
+letter-spacing: 4px;
+font-style: normal;
+
+margin-bottom: 5px; /* Space between header and underline */
+}
+
+
+
+.about-text {
+font-size: 15px;
+font-family: 'Poppins' sans-serif; /* Font size for the text */
+line-height: 1.6; /* Line height for readability */
+margin-top: 25px;
+}
+
+.about-text p {
+margin-bottom: 15px; /* Space between paragraphs */
+font-size: 19px;
+line-height: 36px;
+font-weight: 400;
+font-family: 'Josefin Sans', sans-serif;
+margin-top: -90px;
+color: #000;
+
+}
+
+
+@media (min-width: 767.98px) {
+
+.about-text p{
+margin-top: -100px;
+}
+}
+
+
+
+
+
+@media (max-width: 767.98px) {
+/* Center the About section and adjust padding for mobile */
+.about {
+padding: 30px 15px; /* Responsive padding for mobile */
+text-align: center; /* Center-align the text in the about section */
+}
+
+
+
+.About-Uss {
+display: block; /* Use block display for full width and centering */
+text-align: center; /* Center the content inside the About-Uss */
+}
+
+.About-Uss h1 {
+font-size: 1.2rem; /* Increase font size for mobile */
+font-family: 'Poppins', sans-serif;
+letter-spacing: 2px;
+margin-bottom: 10px; /* Adjust space below heading */
+}
+
+
+
+
+.about-text p {
+text-align: left;
+}
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  </div>
+
+        <!-- Transparent space to force scrolling -->
+        <div class="extra-space"></div>
+    </div>
+
+
+
+<script>
+    function toggleMenu() {
+      const dropdownMenu = document.getElementById('dropdown-menu');
+      dropdownMenu.classList.toggle('active');
+    }
+  </script>
+  
+
+
+    <script>
+      let lastScrollPos = 0; // Keep track of the last scroll position
+      let scrollTimer;
+
+      window.addEventListener('scroll', function() {
+        const hero = document.querySelector('.hero');
+        const extraText = document.querySelector('.extra-text');
+        const scrollPos = window.scrollY;
+
+        // When scrolling down past 100vh, move the hero section up and show extra text
+        if (scrollPos > window.innerHeight) {
+          hero.style.transform = 'translateY(-50vh)'; // Move up by 50vh
+          extraText.style.display = 'flex'; // Show extra text
+        } else {
+          hero.style.transform = 'translateY(0)'; // Stay in original position
+          extraText.style.display = 'none'; // Hide extra text
+        }
+
+        // When scrolling up past 35vh, revert the hero section to its original position
+        if (scrollPos < lastScrollPos && scrollPos <= 0) {
+          hero.style.transform = 'translateY(0)'; // Revert to original position
+        }
+
+        // Update the last scroll position
+        lastScrollPos = scrollPos;
+      });
+    </script>
+
+<script>
+  
+  function toggleMenu() {
+    const menu = document.getElementById("dropdown-menu");
+    menu.classList.toggle("active");
+  }
+
+  typeWord();
+</script>
+
+<script>
+  function toggleMenu() {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.classList.toggle('active');
+  }
+</script>
+
+<script>
+  // Select your navbar
+const navbar = document.querySelector('.navbar');
+
+// Add a scroll listener
+window.addEventListener('scroll', () => {
+const heroSection = document.querySelector('.hero'); // Hero section selector
+const heroHeight = heroSection.offsetHeight; // Get the height of the hero section
+
+// Check if the user has scrolled past the hero section
+if (window.scrollY > document.querySelector('.hero').offsetHeight * 0.4) {
+navbar.classList.add('hidden'); // Add the 'hidden' class to the navbar
+} else {
+navbar.classList.remove('hidden'); // Remove the 'hidden' class
+}
+});
+
+</script>
+</body>
+</html>

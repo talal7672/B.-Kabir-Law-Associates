@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet"> 
+  <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+
+  <title>B Kabir & Law Associates</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ 
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fff;
+    z-index: 1000;
+    font-family: 'Josefin Sans', sans-serif;
+    
+    
+  }
+
+  
+
+
+
+
+
+
+  .navbar .logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo:hover {
+  transform: translateX(5px);
+}
+
+.navbar .logo img {
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 25px;
+}
+
+.navbar .logo span {
+  padding-top: 25px;
+  font-size: 1.6rem;
+  font-weight: 100;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 5px;
+}
+
+  
+
+  .hamburger {
+    
+    position: relative;
+    width: 60px;
+    height: 35px;
+    top: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger:hover {
+    transform: translateX(-5px);
+  }
+
+  .hamburger div {
+    width: 80%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger div.middle {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  :root {
+    --bar-width: 350px;
+    
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 5rem;
+    transition: right 0.3s ease;
+    z-index: 9999;
+    overflow-y: auto;
+    padding-top: 200px;
+  }
+
+  .dropdown-menu.active {
+    right: 0;
+  }
+
+  .dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 1.9rem 0;
+    position: relative;
+    transition: color 0.3s;
+    padding-left: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 4px;
+  }
+
+  @media (max-width: 767.98px) {
+.dropdown-menu {
+  padding-left: 105px;
+}
+
+}
+
+
+
+
+
+
+
+
+  .dropdown-menu a::before, .dropdown-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: var(--bar-width);
+    height: 0.3px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dropdown-menu a::before {
+    top: 0px;
+    
+  }
+
+  .dropdown-menu a::after {
+    bottom: 0px;
+    
+  }
+
+  .dropdown-menu .live-location {
+    margin-top: 2rem;
+    background-color: #DDDDDD;
+    
+    color: #fff;
+    padding: 1.3rem 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: black;
+    font-size: 0.8rem;
+  }
+
+  .dropdown-menu .live-location:hover {
+    background-color: #fff;
+  }
+
+  .dropdown-menu .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 35px;
+    height: 35px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .dropdown-menu .close-btn div {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    
+  }
+
+  .dropdown-menu .close-btn div:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .hero h1 {
+font-size: 4.5rem;
+font-weight: 200;
+letter-spacing: 20px;
+position: relative !important;
+font-family: 'Josefin Sans', sans-serif;
+margin-top: -400px;
+}
+
+
+
+  .typed-text {
+position: absolute;
+top: 100%; /* Position the animated words below the "We are the" text */
+left: 50%;
+transform: translateX(-50%); /* Center the animated text horizontally */
+white-space: nowrap; /* Prevents the text from breaking into two lines */
+font-size: 4.5rem; /* Adjust as needed for size */
+letter-spacing: 20px;
+word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .typed-text {
+      font-size: 1.5rem;
+      word-wrap: break-word; /* Allows words to break */
+      overflow-wrap: break-word; /* Ensures proper line breaking */
+      white-space: normal; /* Enables text wrapping */
+  }
+
+  .hero h1{
+  font-size: 1rem;
+  text-align: center;  
+  justify-content: center;  
+  max-width: 100%;
+  }
+}
+
+
+
+.typed-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: typing 1s ease-in-out forwards;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  @media (max-width: 768px) {
+
+
+    .navbar {
+      padding: 7px;  
+    }
+
+    .navbar .logo span {
+      font-size: 0.8rem;
+      
+    }
+
+    .dropdown-menu a {
+      font-size: 1rem;
+    }
+
+    .hamburger {
+      width: 25px;
+      height: 25px;
+      margin-right: 15px;
+    }
+  }
+  </style> 
+  
+  
+  <style>
+    .extra-text {
+      position: fixed;
+      margin-top: 0; /* Removed margin-top to eliminate gap */
+      padding: 40px 0; /* Adjust padding if needed */
+      margin-top: 100px;
+      background: #121518; /* Black background */
+      color: #ffffff;
+      text-align: center; /* Center-align all elements */
+      display: flex; /* Use Flexbox */
+      flex-direction: column; /* Arrange children vertically */
+      justify-content: center; /* Center content vertically */
+      height: 400px; /* Set a fixed height to maintain the black area */
+    }
+    
+    .extra-text h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 32px;
+      color: #aa9166;
+      margin-bottom: 10px; /* Adjust bottom margin */
+      
+    }
+
+    @media (min-width: 768px) {
+      .extra-text h3 {
+        margin-top: 60px;
+      }
+    }
+
+      
+
+
+    
+    /* Media Query */
+    @media (max-width: 768px) {
+      .extra-text h3 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .extra-text {
+        padding: 0;
+      }
+    }
+    
+    .extra-text p9 {
+      font-size: 15px;
+      font-family: 'Josefin Sans', sans-serif;
+      color: #ffffff;
+      margin-bottom: 3px; /* Adjust bottom margin */
+    }
+    
+    .extra-text p9:last-child {
+      margin-bottom: 30px !important; /* Adjust bottom margin for the last paragraph */
+    }
+    
+    .footer-social-media {
+      margin-top: 40px; /* Space above social icons */
+    }
+    
+    .footer-social-media .social-icon {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px; /* Center the icon within the circle */
+      margin: 0 3px; /* Space between icons */
+      background: #ffffff; /* White background */
+      border-radius: 50%; /* Make it a circle */
+      font-size: 24px; /* Icon size */
+      color: #121518; /* Default icon color */
+      transition: background 0.4s ease, color 0.4s ease; /* Smooth transition for hover effect */
+    }
+    
+    /* Hover effect for social icons */
+    .footer-social-media .social-icon:hover {
+      background: #aa9166; /* Gold color on hover */
+      color: #ffffff; /* Change icon color to white */
+    }
+    </style>
+
+
+
+<style>
+  /* General Reset */
+
+
+/* Wrapper */
+.wrapper {
+position: relative;
+width: 100%;
+height: 100%; /* Full height */
+}
+
+/* Hero Section */
+.hero {
+position: fixed; /* Stays fixed at the top of the viewport */
+top: 0;
+left: 0;
+width: 100%;
+height: 150vh; /* Full 150vh height */
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), 
+         url('img/cutefirm_banner_books.jpg') no-repeat center center/cover;
+color: #fff;
+text-align: center;
+z-index: 1;
+
+}
+
+
+/* Extra Text Section */
+.extra-text {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 50vh;
+background-color: rgba(0, 0, 0, 0.7);
+color: white;
+display: none; /* Hide it initially */
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+padding-top: 50px;
+}
+
+/* Contact Section */
+.contact-section {
+position: relative;
+margin-top: 100vh; /* Starts right after the 100vh of the hero section */
+width: 100%;
+min-height: 80vh; /* Full height of the viewport */
+background-color: #ffffff;
+color: #000000;
+display: flex;
+flex-direction: column;
+
+
+z-index: 2;
+
+padding-bottom: 20px;
+}
+
+
+/* Transparent space to force scrolling */
+.extra-space {
+height: 40vh; /* Extra scroll space */
+background-color: transparent; /* Transparent background */
+}
+</style>
+
+
+  </head>
+
+
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+          <img src="img/logoW.png" alt="Company Logo">
+          <span>B Kabir & Law Associates</span>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div class="middle"></div>
+          <div></div>
+        </button>
+      </header>
+      
+      <div class="dropdown-menu" id="dropdown-menu">
+        <button class="close-btn" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+        </button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="practice1.html">Services</a>
+        <a href="attorney.html">Attorney</a>
+        <a href="associates.html">Associates</a>
+        <a href="contact.html">Contact</a>
+        <button class="live-location" onclick="window.open('https://maps.app.goo.gl/5n88uqXQPzYyFhso7?g_st=ic')">Live Location</button>
+      </div> 
+      
+   
+  
+
+    <div class="wrapper">
+        <section class="hero">
+          <h1>PRACTICE AREAS<br> <span class="typed-text"></span></h1>
+          <i class="fas fa-chevron-down"></i>
+          <div class="extra-text">
+            <h3>B. KABIR & LAW ASSOCIATES</h3>
+            <p9><i class="fa fa-map-marker-alt"></i>&nbsp;30 Topkhana Road, Amina Vista, Flat C-2N</p9>
+
+            <p9><i class="fa fa-phone-alt"></i>&nbsp; +880 1715016 746</p9>
+            <div class="footer-social-media">
+                <a href="https://facebook.com" class="social-icon" data-icon="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" class="social-icon" data-icon="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.google.com/maps" class="social-icon" data-icon="maps"><i class="fas fa-map-marker-alt"></i></a>
+      
+            </div>
+            
+          </div>
+          <!-- Add FontAwesome CDN for Icons -->
+
+
+
+
+        </section>
+
+        <style>
+/* Style the down-arrow icon */
+.fas.fa-chevron-down {
+  position: absolute;
+  top: 62%;         /* Center vertically */
+  left: 50%;        /* Center horizontally */
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;    /* Ensure it's on top of other elements */
+  
+  /* Start centered */
+  transform: translate(-50%, -50%);
+  
+  /* Bounce Animation */
+  animation: bounce 2s infinite;
+}
+
+@media (max-width: 767.98px) {
+  .fas.fa-chevron-down {
+    top: 56%;
+  }
+} 
+
+
+
+/* Bounce Animation Keyframes */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    /* Stay centered */
+    transform: translate(-50%, -50%);
+  }
+  40% {
+    /* Bounce upward by 20px while preserving centering */
+    transform: translate(-50%, calc(-50% - 20px));
+  }
+  60% {
+    /* Bounce downward by 10px while preserving centering */
+    transform: translate(-50%, calc(-50% - 10px));
+  }
+}
+
+          
+          </style> 
+      
+<div class="contact-section">
+
+<!--ABOUT CSS START-->
+  
+<div class client76></div>
+<div class="text-lines2">
+<p3>What We Are Good At</p3>
+<p2>Our Practice Areas</p2>
+</div>
+
+
+<style>
+.text-lines2 p3{
+
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-size: 19px;
+margin-top: 10px;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 400;
+color: #707070;
+letter-spacing: 3px;
+font-style: normal;
+padding-top: 100px;
+
+
+
+}
+
+.text-lines2 p2 {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-size: 60px;
+font-family: 'Josefin Sans', sans-serif;
+color: #000;
+font-weight: 300;
+margin-top: -2px;
+
+position: relative; /* Make the parent relative for positioning the line */
+letter-spacing: 10px;
+}
+
+.text-lines2 p2::after {
+content: '';
+position: absolute; /* Position the line relative to the text */
+left: 50%; /* Center the line beneath the text */
+top: 90px; /* Place the line directly beneath the text */
+width: 30px; /* Adjust the thickness of the line */
+height: 1.5px; /* Adjust the height of the line */
+background-color: #000; /* Color of the line */
+transform: translateX(-50%); /* Center the line horizontally */
+
+@media (max-width: 767.98px) {
+  .text-lines2 p2 {
+    font-size: 12px;
+  }
+}
+
+
+}
+</style>
+          <!-- services title ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+      /* General reset */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+
+
+      .service-container {
+          display: flex;
+          max-width: 100%;
+          overflow: hidden;
+          padding: 100px;
+          justify-content: space-between;
+      }
+
+      .service-list {
+          width: 30%;
+          padding: 0 20px; /* Padding on both sides */
+          overflow-y: auto;
+          position: relative;
+          font-family: 'Josefin Sans', sans-serif;
+      }
+
+      .service-list ul {
+          list-style-type: none;
+      }
+
+      .service-list li {
+          margin-bottom: 15px;
+          cursor: pointer;
+          padding: 10px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          transition: transform 0.3s;
+          padding-left: 70px; /* Add space for the arrow and vertical bar */
+      }
+
+      /* Hover effect to move text to the right */
+      .service-list li:hover {
+          transform: translateX(10px);
+      }
+
+      /* Minimal divider at the bottom */
+      .service-list li .divider {
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #f0f0f0;
+      }
+
+      /* Active item text color change on click */
+      .service-list li.active {
+          color: #B1976B; /* Golden text color */
+          font-family: 'Josefin Sans', sans-serif;
+      }
+
+      /* Golden arrow pointing towards the right */
+      .service-list li::after {
+          content: '→'; /* Minimal modern arrow (font-based) */
+          position: absolute;
+          left: 20px; /* Adjusted to align the arrow with the text */
+          font-size: 1.2rem; /* Reduced arrow size by 20% */
+          color: transparent; /* Default arrow color is transparent */
+          visibility: hidden; /* Hide the arrow by default */
+          transition: all 0.3s ease-in-out;
+      }
+
+      /* Vertical bar before the arrow */
+      .service-list li .vertical-bar {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%; /* Vertical bar will span the entire height of the list item */
+          max-height: 35px;
+          width: 3.5px; /* Reduced thickness by 30% */
+          background-color: #d3d3d3; /* Grey color when not hovered or clicked */
+          transition: background-color 0.3s ease;
+         
+      }
+
+      /* Show the arrow and change its color when hovered or clicked */
+      .service-list li:hover::after,
+      .service-list li.active::after {
+          color: #B1976B; /* Change arrow color to golden */
+          visibility: visible; /* Show the arrow */
+          left: 30px; /* Slightly adjust the arrow to make it emerge from the vertical bar */
+      }
+
+      .service-list li:hover .vertical-bar,
+      .service-list li.active .vertical-bar {
+          background-color: #B1976B; /* Change vertical bar color to golden when hovered or clicked */
+      }
+
+      .service-details {
+          width: 80%;
+          padding: 0 20px; /* Padding on both sides */
+          overflow-y: auto;
+      }
+
+      .service-detail {
+          display: none; /* Hide all details by default */
+          padding: 20px;
+      }
+
+      .service-detail.active {
+          display: block; /* Show the active service details */
+      }
+
+      .service-detail img {
+          width: 100%;
+          max-width: 100%; /* Make sure image stretches to the width of the container */
+          max-height: 350px;
+          border-radius: 0px;
+          margin: 20px 0;
+      }
+
+      h2 {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+      }
+
+      p {
+          font-size: 22px;
+          line-height: 1.2;
+          font-family: 'Josefin Sans', sans-serif;
+          font-weight: 600;
+          padding-bottom: 30px;
+          padding-top: 30px;
+          color: #B1976B;
+          
+      }
+      p1 {
+          font-size: 18px;
+          line-height: 1.8;
+          font-family: 'Josefin Sans', sans-serif;
+          font-weight: 400;
+          margin-top: 20px;
+          color: #000000;
+
+
+      }
+      article {
+          font-size: 17px;
+          line-height: 1.5;
+          font-family: 'Josefin Sans', sans-serif;
+          font-weight: 400 !important;
+          font-weight: 100;
+          padding-top: 15px;
+          color: #555555;
+                     
+      }
+
+      /* New title for Practice Areas */
+      .practice-areas {
+          font-size: 1rem;
+          font-weight: bold;
+          margin-bottom: 30px;
+      }
+
+      /* Vertical Bar Adjustments */
+.service-list li .vertical-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%; /* Ensure the vertical bar takes full height of the list item */
+  width: 3.5px; /* Width of the vertical bar */
+  background-color: #d3d3d3; /* Default grey color */
+  transition: background-color 0.3s ease;
+}
+
+/* Smooth Fade-In Effect for Service Details */
+.service-detail {
+  display: none; /* Hide all details by default */
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Fade-in effect */
+}
+
+/* Show the active service details with fade-in effect */
+.service-detail.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Optional: Add some loading animation for service details */
+.service-detail.loading {
+  animation: fadeIn 1.5s ease-out infinite; /* Infinite loading animation */
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+/* Accordion Styles */
+.accordion-container {
+margin-top: 20px;
+}
+
+/* Accordion Button Styles */
+.accordion {
+background-color: #f1f1f1;
+color: #444;
+cursor: pointer;
+padding: 20px;
+width: 100%;
+border: none;
+text-align: left;
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+transition: background-color 0.3s;
+margin-bottom: 10px; /* Padding between each accordion */
+}
+
+.accordion:hover {
+background-color: #ccc;
+}
+
+/* Active state (Golden Color when clicked) */
+.accordion.active {
+background-color: #000000;
+}
+
+/* Panel Styles */
+.panel {
+padding: 0 20px;
+display: none; /* Hidden by default */
+background-color: transparent; /* Remove the background */
+margin-bottom: 10px;
+}
+
+
+
+/* Show panel when it's active */
+.panel.active {
+display: block;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 767px) {
+
+/* General Layout */
+.service-container {
+  padding: 20px;
+}
+
+/* Ensure Service List comes below Service Details */
+.service-list, .service-details {
+  display: block; /* Stack both sections vertically */
+  width: 100%; /* Make them take full width */
+  margin-top: 20px;
+}
+
+/* Adjust Service List Items */
+.service-list li {
+  padding: 10px;
+  font-size: 14px;
+  display: block; /* Ensure list items are stacked vertically */
+}
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+/* ... other mobile-specific styles ... */
+
+/* Remove the arrow */
+.service-list li::after {
+  display: none;
+}
+
+/* Re-order the elements */
+.service-container {
+  flex-direction: column-reverse; /* Reverse the order */
+}
+.service-details {
+  padding: 1px; /* Adjust padding as needed */
+}
+
+}
+
+
+
+
+
+
+
+
+  </style>
+
+
+
+
+
+
+<div class="service-container">
+  <div class="service-list">
+      <!-- New Practice Areas Title -->
+      <div class="practice-areas">Practice Areas</div>
+      <ul>
+          <li onclick="showServiceDetails('service1')" id="service1-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Audit Services
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service2')" id="service2-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  ITA & Consultancy
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service3')" id="service3-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Corporate Tax
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service4')" id="service4-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  VAT Services
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service5')" id="service5-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Accountancy & Outsourcing
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service6')" id="service6-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Payroll Service
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service7')" id="service7-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Business Support
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service8')" id="service8-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Secretarial Affairs
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service9')" id="service9-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Law & Regulatory
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service10')" id="service10-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  HR Consultancy
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service11')" id="service11-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Financial Advice
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service12')" id="service12-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Management Consultancy
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service13')" id="service13-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Foreign Companies
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service14')" id="service14-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Office Formation
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service15')" id="service15-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  FDI Functions
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service16')" id="service16-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Performance Audit
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service17')" id="service17-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Asset Valuation
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service18')" id="service18-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Brand Assist
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service19')" id="service19-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  IPO & Advisory
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service20')" id="service20-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Corporate Governance 
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service21')" id="service21-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  ERC
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service22')" id="service22-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  IRC
+              </span>
+              <div class="divider"></div>
+          </li>
+          <li onclick="showServiceDetails('service23')" id="service23-btn">
+              <div class="vertical-bar"></div> <!-- Vertical bar -->
+              <span class="arrow-container">
+                  Project Profile
+              </span>
+              <div class="divider"></div>
+          </li>
+          <!-- Add more services here -->
+      </ul>
+  </div>
+  
+  <div class="service-details">
+      <div id="service1" class="service-detail">
+          
+          <img src="img/tribunal.jpg" alt="Service 1 Image">
+          <p>Ensuring transparency and trust, our audit services provide a clear, accurate reflection of your business's financial health</p>
+          <p1>Auditing is the process of examining or inspecting the various record of accounts by an auditor. Auditing is necessary to make sure that all departments within an organization are following the standard system of recording transaction. However, auditing can be done both internally and externally by head of the department or by an outside auditor.  Sometimes an external auditor is hired to ensure that the auditing is done in a fair manner. Always hire a Chartered Accountants who can perform independent audits of your organization.</p1>
+          <p>Mainly there are four steps of conducting an audit</p>
+          <div class="accordion-container">
+              <div class="accordion-item">
+                  <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Define Auditor Role</button>
+
+                <div class="panel">
+                  <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The first step is to define the role of the auditor and the conditions for participation. Which is usually in the form of a letter duly signed by the customer
+                  </accordion>
+                  
+                </div>
+              </div>
+            
+              <div class="accordion-item">
+                  <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Plan Audit Process</button>
+
+                <div class="panel">
+                  <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The second step is to plan out the auditing process. Which includes the details of document that auditor will cover and the deadline the auditor will finish the tasks
+                  </accordion>
+                  
+                </div>
+              </div>
+              <div class="accordion-item">
+                  <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Compline necessary information</button>
+
+                <div class="panel">
+                  <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The third steps are to compline all the necessary information of the audit, that is- you need to put all the finding in a report. The final step is to prepare the results in a reporting manner
+                  </accordion>
+                  
+                </div>
+              </div>
+              <p>BKLA’s Audit Service Procedure</p>
+              <article>Our Audit service is a central resource for clients tailored to their specific business needs and industry sector. Our aim is to be as practical as possible and to provide flexibility in approach to allow for the individual needs of your business. We are well used to dealing with the unique processes of in house accounting teams and are familiar with the many different accounting packages.</article>
+              <article>All work is overseen by a consultant to ensure the highest levels of service and all work is carried out by a highly experienced and qualified audit manager and members of our dedicated audit department.</article>
+              <article>Auditing large groups to individual companies means our expertise is diverse, whether applying GAAP, IFRS or IAS; we have the technical expertise to assist in any assignment.</article>
+              <article>Income Tax computation, Computation of Capital Allowances, Losses from Business and Detailed Income Statement for The Year. However, if you need auditing of your organization feels free to contact us, B.Kabir & Law Associates is always there for you.</article>
+              <article>For further information, please Contact us.</article>
+          </div>
+
+</div>
+      <div id="service2" class="service-detail">
+      
+          <img src="img/tribunal.jpg" alt="Service 2 Image">
+          <p>Simplifying your tax filing, one return at a time</p>
+          <p1>Taxation is always a highly complex issue and always changing. It is something that affects everyone's life. It is a factor that is considered for all our clients whether we are performing services for a company, a business or an individual.</p1>
+          <article>B.KABIR & LAW ASSOCIATES have been approached by international professional services firms & companies for our expertise in these areas who were seeking the best solutions for their clients.  We try to understand our clients’ business and work closely with them to provide tailor made tax advice that results in the most effective and the most efficient discharge of tax liability for our clients.  Our main target is to provide receptive and quality fiscal and corporate law services to clients.</article>    
+          <article>As taxation advisors we take a practical and long-sighted approach, planning well in advance to maximize benefit and minimize risk wherever possible. Compliance is just the first step; we challenge prevailing tax wisdom constantly, seeking innovative solutions to the most complex tax problems. We have become an essential asset for our clients who trust us to uncover all the angles in the pursuance of their personal or business objectives.</article>
+          <p>We are the tax specialists. We can provide you with year-round tax advice on</p>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">ITA Return for local & expats</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">A comprehensive process of preparing and filing income tax returns for both local and expatriate individuals, ensuring compliance with relevant tax laws and regulations.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Corporate Tax Assessment and Planning</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Involves assessing a company's tax liabilities and devising strategies to optimize tax exposure, ensuring legal compliance while minimizing tax burdens.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Capital Gains Tax</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The taxation of profits realized from the sale of assets or investments, with specific rates and exemptions depending on the asset type and holding period.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Inheritance Tax</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">A tax imposed on the estate of a deceased person, which may apply to the transfer of assets to heirs, depending on jurisdiction and value of the estate.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Trusts and Estates</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Legal structures used to manage and distribute assets, with specific tax considerations for the administration of trusts and estates, including the tax implications for beneficiaries.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Deferred Tax Computation and Application</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The calculation and application of taxes that are recognized in financial statements but deferred for payment to a future date, often due to timing differences between tax and accounting rules.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Acting on Behalf of the Clients as Tax Representative</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">A professional acting as the representative of clients in dealings with tax authorities, ensuring compliance and managing tax matters on their behalf.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Partnership Tax</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The taxation of business partnerships, including the allocation of profits and losses among partners and the tax obligations of the partnership as a whole.
+              </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Tax Appeals</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The process of challenging decisions made by tax authorities, involving the submission of appeals to contest tax assessments, penalties, or other tax-related decisions.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Appellate Tribunals</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Independent bodies that hear appeals against tax authority decisions, providing a legal forum for resolving disputes between taxpayers and tax authorities.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">High Court Tax Reference</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">A legal process where unresolved tax disputes are referred to the High Court, which offers a judicial review and decision on complex tax matters.
+
+                  </accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">ADR from All Forum</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Alternative Dispute Resolution (ADR) methods, such as arbitration or mediation, used to resolve tax disputes outside of traditional court processes, offering more flexible and expedited resolutions.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Tax Effective Remuneration Planning</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Strategies to structure compensation packages in a tax-efficient manner, minimizing tax liabilities for both the employer and the employee.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Transfer Pricing</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The pricing of transactions between affiliated entities within a multinational group, governed by international tax rules to ensure fair taxation and prevent tax avoidance.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Tax Accounting and Tax Disclosure for Audit</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The process of preparing tax-related financial statements and ensuring compliance with disclosure requirements for tax audits, ensuring transparency and accuracy in tax reporting.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Tax Investigations</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">The examination by tax authorities into a taxpayer's financial affairs to ensure compliance with tax laws, often involving audits, inquiries, and reviews of tax filings.</accordion>
+              
+            </div>
+          </div>
+          <p>Personal Tax Planning</p>
+          <article>With the tax regime becoming more complex and more emphasis being put on taxpayers' individual responsibilities, everyone who is subject to taxation needs professional advice and support if they are to optimize their tax position and ensure they meet all the compliance requirements.</article>
+          
+          
+      </div>
+      <div id="service3" class="service-detail">
+      
+          <img src="img/tribunal.jpg" alt="Service 3 Image">
+          <p>Navigate the complexities of corporate taxation with expert guidance, ensuring compliance while maximizing efficiency</p>
+          <p>We offer a range of services to help you minimize your corporate tax exposure and relieve you of the administrative burden of complying with tax legislation. These include</p>>
+          
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Determining the most tax effective structure for your business</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Taking full advantage of tax opportunities and reliefs</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Achieving the optimum capital or revenue tax treatment</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;"> Reducing tax on disposals and maximizing relief on acquisitions</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Making the most of tax opportunities specific to your industry</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Meeting the rigorous demands of compliance including corporation tax self-assessment</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Acting on your behalf in discussions with the tax authorities</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Efficient corporate tax planning can result in potentially significant improvements in your bottom line</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"></accordion>
+              
+            </div>
+          </div>
+          <article>There are also a number tax schemes available to assist in reducing the taxable income that needs to be declared on company tax returns or your personal tax return as applicable.  National Board of Revenue (NBR) will seek to challenge the tax deductibility of these schemes.</article>
+          <article>Make sure you take full advantage of the tax saving opportunities open to you - contact us today for a personal tax planning review.</article>
+      </div>
+      <div id="service4" class="service-detail">
+          
+          <img src="img/tribunal.jpg" alt="Service 4 Image">
+          <p>Simplifying VAT processes, we help your business stay compliant and make the most of available opportunities</p>
+          <p1>Value added tax is one of the most complex and onerous tax regimes imposed on business - so complex that many businesses inadvertently overpay or underpay VAT. The ever-widening scope of VAT, the constant stream of detailed changes to the regulations, and the ever-growing demands of Customs and Excise call for a trained professional eye to ensure that you do not fall foul of the regulations.</p1>
+          <article>The most common corporate taxation disputes relate to allowance or disallowance of expenditure, acceptability of debit vouchers and evidence, AIT and related expenses, imposition of estimated profit, rejection of trading accounts etc.</article>
+          <article>Clients’ satisfaction is our first priority. We remain hundred percent faithful and trustworthy to our clients. We try to understand our clients’ business and work closely with them to provide tailor made tax advice that results in the most effective and efficient discharge of tax liability for our clients. From the beginning we emphasize transparency as we believe is the core foundation of a great client relationship.</article>
+          <p>We provide an efficient cost-effective VAT service, which includes</p>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Assistance with VAT registration</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Advice on VAT planning and administration and management system:</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Advice on VAT planning and administration and management system</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;"> Providing guidance on managing VAT obligations, creating an effective administration system to handle VAT transactions and reporting.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Use of the most appropriate scheme</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Advising on the most suitable VAT scheme (e.g., flat rate or standard) based on business operations to maximize efficiency and minimize liabilities.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">VAT Calculation & Assessment</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Calculating VAT liabilities correctly, assessing VAT obligations, and ensuring compliance with tax regulations.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Preparing VAT Return and Submission</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Assisting in the preparation and timely submission of VAT returns to tax authorities to ensure accuracy and avoid penalties.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">VAT control and reconciliation</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Ensuring proper control over VAT transactions, reconciling records to ensure consistency, and resolving discrepancies.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Help with completing VAT returns</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Providing assistance in completing VAT returns correctly and efficiently to meet tax requirements.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Planning to minimize future problems with Customs and Excise</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Offering strategies to avoid potential issues with Customs and Excise authorities, ensuring smooth operations and compliance.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Negotiating with Customs and Excise in disputes and representing you at VAT tribunals Commissioner Appeal</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Helping businesses resolve disputes with Customs and Excise, including representation at VAT tribunals or Commissioner Appeals.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Appellate Tribunals</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Assisting with appeals before VAT Appellate Tribunals, helping businesses present their cases effectively.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">High Court Reference</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Providing support in referring VAT-related disputes to the High Court when necessary, helping businesses navigate complex legal challenges.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">ADR from All Forum Import</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Facilitating Alternative Dispute Resolution (ADR) for import-related VAT disputes, ensuring fair resolution without the need for lengthy court procedures.</accordion>
+              
+            </div>
+          </div>
+          <article>Call or contact B.KABIR & LAW ASSOCIATES today for a VAT health-check of your organization.</article>
+
+      </div>
+      <div id="service5" class="service-detail">
+          
+          <img src="img/tribunal.jpg" alt="Service 5 Image">
+          <p>Leave your accounting to us, so you can focus on growing your business with peace of mind</p>
+          <p1>Our expert team members cooperate to prepare to account upon supporting documents, invoice, bank statement and so on. B/S, Profit/ Loss, Ledger, Journal, directors, profile, notes are prepared for draft accounting. The accounting services deal with recording, the analysis of the financial transactions of a business etc.</p1>
+          <article>Ultimately, our aim is to help clients maintain good records throughout the financial year to make the process as simple and cost effective as possible. We help clients comply with all their obligations, preparing accounts for shareholders, the Inland Revenue and abbreviated accounts for companies’ house as part of our comprehensive service. The fees that are charged for the accounting services are not in any case taxed. The various small businesses tend to be attracted by the various projects that deal with savings. Such savings can now be used to run business core activity.</article>
+          <article>We can relieve you and your staff of an enormous burden by taking care of all your bookkeeping and accounting needs, including the preparation of your annual accounts. Our first step is to work with you so we can gain a full understanding of your business. We then tailor our approach to your requirements so we can provide exactly the service you need.</article>
+          <p>The accounting service firms provide the range of services which includes Bookkeeping Services, Accounting Staff Placement, Accounting Outsourced. Bank Reconsideration, Profit and Loss Accounts, Ledger and journal</p>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Book Keeping Service</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Our bookkeeping services includes recording, storing and retrieving of financial transactions of a business, individual or non-profit organization. Our bookkeeping service is done by using accounting software. It will make sure that you are able to access the software and any other reports that you want. Moreover, we also mail full set accounts to the client, so that they can review balance sheet and income statement.<br>As a small business owner **you have more important things to do than bookkeeping.<br>Contact B. KABIR & LAW ASSOCIATES provides experienced, affordable and dependable bookkeeping and daily money management services to small businesses.<br>We can take care of your books so you can get back to the job of running your business and generating profits! We will also work with your CPA or tax preparer to help you save tax return preparations fees.<br>Put our 13 plus years of accounting and bookkeeping experience to work for your small business.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Bank Reconsideration</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Due to effective nature of the customers, the majority will prefer to go for the bank reconsideration. It helps in showing if there is acceptance of the credit application or rather rejection on the same face value. It is easy to have the given rejection quite overturned. This is made possible with the bank reconsideration. Each given reconsideration firm will now show you some progress that you require to move on. The case that will be prepared well can now be reconsidered upon doing the application. Everything is now made possible by the use of the bank reconsideration.<br>We can help you<br>Personal Application Reconsideration<br>Business Application Reconsideration</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Profit and Loss Accounts </button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">It involves the process, which normally ascertain the annual net profit as well as the loss for a given business. The Gross net is usually made possible with the use of the trading account. It is then considered to be working well due to the profit as well as the loss account. You can find the preparation of the profit also loss account present in the trial balance. In this case, mostly the indirect expenses as well as the indirect revenue seems to work all through. The balancing is done based on the nature of the business that is going to be done.<br>This require a different format than the traditional profit and loss statement and the income statement.  The traditional profit and loss focuses on sales of products and a corresponding cost of goods sold section to help the reader evaluate the gross margin.  But in service, the owner needs a profit and loss statement formatted to key in on overall productivity and costs of that productivity.<br>We can assist you by identifying and recording the below information to derive a profit and loss statement for a service related business should provide the following information:<br>Revenues related to professional services rendered · Revenues related to support staff · Revenues related to non-service items · Direct costs of professional services · Direct costs of support staff · Other direct costs · Fixed and Variable Personnel Related Costs · Overhead · Profit Before Taxes</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Ledger and journal </button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Our general ledger maintenance and reconciliation help our clients focus on their business while we work behind the scenes. we can properly assist you in your general ledger accounting needs. We deliver high quality results at an affordable price.<br>Our General Ledger Accounting and Reconciliation Includes...<br>Adjust for prepayments and accruals<br>Process asset purchase, disposal and depreciation journals<br>Process stock movement and adjustment journals<br>Process payroll journals<br>Process lease, purchase, loan and dividend journals<br>Review all general ledger accounts and correct any posting errors<br>Reconcile all balance sheet control accounts<br>Provide copies of all journal entries made together with a detailed narrative of why the adjustment was made</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Accounting Software </button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Our firm is highly computerized and we can assist you computerize your accounting department too. We will help you choose the most appropriate software and help you get it up and running, tailoring for your company where necessary and then providing some training and on-going support until you can run independently.</accordion>
+              
+            </div>
+          </div>
+          <article>There may be other options dependent on your personal circumstances so contact B.KABIR & LAW ASSOCIATES to find out more.</article>
+      </div>
+      <div id="service6" class="service-detail">
+          
+          <img src="img/tribunal.jpg" alt="Service 6 Image">
+          <p>Efficient, accurate, and timely payroll solutions designed to meet the unique needs of your workforce</p>
+          <p1>From start-up to established enterprises, businesses rely on accurate and insightful financial information in order to maintain profitability and capitalize on new opportunities. Administering your payroll can be time consuming and burdensome, diverting energy and resources from the core activities of your business. And the task is made all the more difficult by the growing complexity of taxation and employment legislation and the accompanying regime of penalties for non-compliance.</p1>
+          <article>Even if you have only a few employees, you will make savings by engaging us to administer your payroll. We run hundreds of payrolls every month and our team enjoys helping our clients keep up-to-date and with the law.</article>
+          <p>B.KABIR & LAW ASSOCIATES have dedicated staffs that can relieve you of this burden by providing a comprehensive and confidential payroll service, including but are not limited to</p>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Customized pay slips</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Provide employees with personalized pay slips that reflect accurate details of their earnings, deductions, and net pay, ensuring clarity and transparency.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Summaries of payroll costs by department, cost centre and company</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Offer detailed breakdowns of payroll expenses, categorized by department, cost centre, and overall company, enabling more efficient budget tracking and cost management.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Administration of PAYE, statutory sick pay, statutory maternity pay, etc</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Manage the administration of Pay As You Earn (PAYE) tax, along with statutory benefits like sick pay and maternity pay, ensuring legal compliance and timely processing.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Completion of statutory forms, including year-end returns, to issue to your employees and submit to the National Board of Revenue</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">- Handle the preparation and submission of mandatory government forms, including year-end returns, and ensure that they are issued to employees and sent to the National Board of Revenue.
+                  -</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Summarizes and analysis of staff costs</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Provide summaries and detailed analysis of staff-related expenses, helping businesses better understand and manage the financial impact of their workforce.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Administration of incentive schemes, bonuses, and ex-gratia and termination payments</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Oversee the effective administration of employee incentive programs, performance bonuses, ex-gratia payments, and termination benefits to ensure timely and accurate distribution.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Administration of pension schemes etc</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Manage pension scheme contributions and ensure compliance with legal requirements, providing employees with secure retirement benefits.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Tracking loans, holiday pay, maternity pay and sick pay</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Maintain accurate records of employee loans, holiday entitlements, and statutory benefits like maternity and sick pay, ensuring timely and correct adjustments.</accordion>
+              
+            </div>
+          </div>
+          <div class="accordion-item">
+              <button class="accordion" style=" letter-spacing: 1px; font-size: 14px; color: #a8a4a4; font-family: 'Josefin Sans', sans-serif; font-weight: bold;">Deduction of tax @ source and depositing such to Govt. treasury and issuing certificate of such</button>
+
+            <div class="panel">
+              <accordion style="font-size: 15px; color: #555; font-family: 'Josefin Sans', sans-serif; font-weight: normal; border-radius: 5px;">Accurately deduct tax at source, deposit it into the government treasury, and issue certificates to employees for their tax records.</accordion>
+              
+            </div>
+          </div>
+          <article>Our service is confidential, comprehensive and cost effective; it has been running for many years successfully. So, please Contact us.</article>
+      </div>
+      <div id="service7" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 7 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service8" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 8 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service9" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 9 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service10" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 10 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service11" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 11 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service12" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 12 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service13" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 13 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service14" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 14 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service15" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 15 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service16" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 16 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service17" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 17 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service18" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 18 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service19" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 19 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service20" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 20 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service21" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 21 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service22" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 22 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+      <div id="service23" class="service-detail">
+          <h2>Business Support</h2>
+          <img src="img/tribunal.jpg" alt="Service 23 Image">
+          <p>Outsource your accountancy needs with our expert...</p>
+      </div>
+
+      
+      <!-- Add more service details here -->
+  </div>
+</div>
+
+<script>
+  function showServiceDetails(serviceId) {
+      // Hide all service details
+      const serviceDetails = document.querySelectorAll('.service-detail');
+      serviceDetails.forEach(detail => {
+          detail.classList.remove('active');
+      });
+
+      // Show the clicked service detail
+      const service = document.getElementById(serviceId);
+      service.classList.add('active');
+
+      // Remove active class from all list items
+      const serviceItems = document.querySelectorAll('.service-list li');
+      serviceItems.forEach(item => {
+          item.classList.remove('active');
+      });
+
+      // Add active class to the clicked item
+      const serviceItem = document.getElementById(serviceId + '-btn');
+      serviceItem.classList.add('active');
+  }
+
+  window.onload = function() {
+  // Default selection of the first service on page load
+  showServiceDetails('service1');
+};
+
+function showServiceDetails(serviceId) {
+  // Hide all service details
+  const serviceDetails = document.querySelectorAll('.service-detail');
+  serviceDetails.forEach(detail => {
+      detail.classList.remove('active');
+  });
+
+  // Show the clicked service detail
+  const service = document.getElementById(serviceId);
+  service.classList.add('active');
+
+  // Remove active class from all list items
+  const serviceItems = document.querySelectorAll('.service-list li');
+  serviceItems.forEach(item => {
+      item.classList.remove('active');
+  });
+
+  // Add active class to the clicked item
+  const serviceItem = document.getElementById(serviceId + '-btn');
+  serviceItem.classList.add('active');
+}
+
+
+
+const accordions = document.querySelectorAll('.accordion');
+
+  accordions.forEach(accordion => {
+    accordion.addEventListener('click', () => {
+      const panel = accordion.nextElementSibling;
+  
+      // Toggle active class for panel and accordion button
+      if (panel) {
+        panel.classList.toggle('active');
+        accordion.classList.toggle('active');
+      }
+    });
+  });
+
+
+      
+
+
+</script>
+          
+</div>
+
+        <!-- Transparent space to force scrolling -->
+        <div class="extra-space"></div>
+    </div>
+
+
+
+<script>
+    function toggleMenu() {
+      const dropdownMenu = document.getElementById('dropdown-menu');
+      dropdownMenu.classList.toggle('active');
+    }
+  </script>
+  
+
+
+    <script>
+      let lastScrollPos = 0; // Keep track of the last scroll position
+      let scrollTimer;
+
+      window.addEventListener('scroll', function() {
+        const hero = document.querySelector('.hero');
+        const extraText = document.querySelector('.extra-text');
+        const scrollPos = window.scrollY;
+
+        // When scrolling down past 100vh, move the hero section up and show extra text
+        if (scrollPos > window.innerHeight) {
+          hero.style.transform = 'translateY(-50vh)'; // Move up by 50vh
+          extraText.style.display = 'flex'; // Show extra text
+        } else {
+          hero.style.transform = 'translateY(0)'; // Stay in original position
+          extraText.style.display = 'none'; // Hide extra text
+        }
+
+        // When scrolling up past 35vh, revert the hero section to its original position
+        if (scrollPos < lastScrollPos && scrollPos <= 0) {
+          hero.style.transform = 'translateY(0)'; // Revert to original position
+        }
+
+        // Update the last scroll position
+        lastScrollPos = scrollPos;
+      });
+    </script>
+
+<script>
+  
+  function toggleMenu() {
+    const menu = document.getElementById("dropdown-menu");
+    menu.classList.toggle("active");
+  }
+
+  typeWord();
+</script>
+
+<script>
+  function toggleMenu() {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.classList.toggle('active');
+  }
+</script>
+
+<script>
+  // Select your navbar
+const navbar = document.querySelector('.navbar');
+
+// Add a scroll listener
+window.addEventListener('scroll', () => {
+const heroSection = document.querySelector('.hero'); // Hero section selector
+const heroHeight = heroSection.offsetHeight; // Get the height of the hero section
+
+// Check if the user has scrolled past the hero section
+if (window.scrollY > document.querySelector('.hero').offsetHeight * 0.4) {
+navbar.classList.add('hidden'); // Add the 'hidden' class to the navbar
+} else {
+navbar.classList.remove('hidden'); // Remove the 'hidden' class
+}
+});
+
+</script>
+</body>
+</html>
